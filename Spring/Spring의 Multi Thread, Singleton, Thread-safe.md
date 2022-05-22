@@ -36,4 +36,9 @@ Spring의 Mjulti Thread, Singleton, Thread-safe
 앞서 Multi Thread 환경은 요청하는 Client에 따라 Thread pool에서 Thread를 생성해 처리한다고 했는데, 여기서 Thread가 가지는 특징이 변수를 저장하는 Stack 영역은 각 Thread별로 할당되지만, 동적 할당된 객체를 저장하는 Heap 영역과 함께 Code, Data 영역은 공유한다는 것이다.
 <br>
 Singleton이 Multi Thread 환경에서 서비스 형태의 오브젝트로 사요되는 경우에는 stateless 방식으로 만들어져야 한다.  이때는 읽기 전용 값이라면 초기화 시점에 인스턴스 변수에 저장해두고 공유하는 것은 문제 없다. 만약 각 요청에 대한 정보나, DB 서버의 리소스로 부터 생성한 정보는 파라미터와 로컬 변수, 리턴 값을 이용하면 된다. 메소드 파라미터나, 메소드 안에서 생성되는 로컬 변수는 매번 새로운 값을 저장할 독립적인 공간이 만들어지기 때문에 싱글톤이라고 해도 문제없다.
+<br>
+## 참고자료
+1.  [](https://fbtmdwhd33.tistory.com/256?category=870663)[https://fbtmdwhd33.tistory.com/256?category=870663](https://fbtmdwhd33.tistory.com/256?category=870663)
+2.  [](https://velog.io/@sihyung92/how-does-springboot-handle-multiple-requests)[https://velog.io/@sihyung92/how-does-springboot-handle-multiple-requests](https://velog.io/@sihyung92/how-does-springboot-handle-multiple-requests)
+3.  [](https://dahye-jeong.gitbook.io/spring/spring/2020-04-09-bean-threadsafe)[https://dahye-jeong.gitbook.io/spring/spring/2020-04-09-bean-threadsafe](https://dahye-jeong.gitbook.io/spring/spring/2020-04-09-bean-threadsafe)
 
